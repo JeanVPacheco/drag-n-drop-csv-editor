@@ -22,7 +22,8 @@ function NewEntryForm({ setInfo }) {
   const addNewEntry = (e) => {
     e.preventDefault();
     setInfo((prev) => {
-      const ID = prev.length + 1;
+      // gera o novo id com base no último elemento do form
+      const ID = Number(prev[prev.length - 1].ID) + 1;
       const newEntry = {
         ID,
         Nome: username,

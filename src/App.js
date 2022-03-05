@@ -11,7 +11,13 @@ function App() {
     <>
       <Header />
       <DropArea setInfo={setInfo} />
-      <NewEntryForm info={info} setInfo={setInfo} />
+      {/* Renderiza opção de adicionar nova entrada apenas
+      se algum csv foi carregado */}
+      {
+        info.length > 0
+          ? <NewEntryForm info={info} setInfo={setInfo} />
+          : null
+      }
       <Table info={info} setInfo={setInfo} />
     </>
   );
