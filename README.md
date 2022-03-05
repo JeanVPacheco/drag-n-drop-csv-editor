@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Deploy: https://drag-n-drop-csv-editor.vercel.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Edit CSV com função "drag and drop"
 
-## Available Scripts
+Esse projeto foi feito para o processo seletivo da startup Inteligov
 
-In the project directory, you can run:
+## Siga as instruções para rodar o app:
 
-### `npm start`
+1. Clone os arquivos para um diretório em sua máquina:
+- $ git clone (endereço SSH ou HTTTP)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Rodando localmente
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Depois de clonar, entre no diretório e instale as dependências necessárias:
+- $ npm install
 
-### `npm test`
+3. Instaladas as dependências, é só rodar o script para montar o aplicativo:
+- $ npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Rodando via docker
 
-### `npm run build`
+2. Depois de clonar, entre no diretório e rode o seguinte comando para iniciar o docker (*):
+- $ docker run -v "$PWD:/app" -p 3000:3000 -it node:12 bash
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Agora que você esta no terminal do container, entre na pasta "app", instale as dependências necessárias e inicie o projeto, que estará rodando na porta 3000:
+- $cd app && npm i && npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Acesse a porta 3000 a partir do navegador:
+- http://localhost:3000/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Explicando um pouco sobre os comandos docker:
+- -v -> mapeia o diretório atual para a pasta "/app" do container
+- -p -> faz um link entre a porta 3000 do computador local com a porta 3000 do container
+- -it -> cria o container de forma interativa, para que seja possível acessar o terminal do container
+- node:12 -> imagem de docker utilizada
+- bash -> o terminal a ser utilizado
