@@ -2,7 +2,13 @@
 
 # Editor de CSV com função "drag and drop"
 
-Esse projeto foi feito para o processo seletivo da startup Inteligov
+Esse projeto foi feito para o processo seletivo da startup Inteligov.
+
+Foram usadas as seguintes bibliotecas:
+
+- papaparse, para acessar os dados do arquivo .CSV
+- eslint, para verificação da sintaxe dos arquivos
+- prop-types, para verificação das props enviadas aos componentes
 
 ## Siga as instruções para rodar o app:
 
