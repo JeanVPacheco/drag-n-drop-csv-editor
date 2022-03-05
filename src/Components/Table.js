@@ -12,6 +12,20 @@ function Table({ info, setInfo }) {
     setSelected((prev) => [...prev, entryId]);
   };
 
+  const removeRow = (entryId) => {
+    setSelected(selected.filter((id) => id !== entryId));
+  };
+
+  const toggleRow = (entryId, e) => {
+    // se a entrada já estiver selecionada, remove do array,
+    // caso contrário adiciona nas selecionadas para remover
+    if (!e.target.checked) {
+      removeRow(entryId);
+    } else {
+      selectRow(entryId);
+    }
+  };
+
   const removeSelected = () => {
     // atribuo o valor atual para uma variável que será filtrada depois
     let filteredInfo = info;
@@ -53,7 +67,7 @@ function Table({ info, setInfo }) {
             <td>
               <input
                 type="checkbox"
-                onClick={() => selectRow(entry.ID)}
+                onClick={(e) => toggleRow(entry.ID, e)}
               />
             </td>
           </tr>
