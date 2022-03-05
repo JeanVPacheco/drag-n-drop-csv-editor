@@ -9,6 +9,7 @@ Foram usadas as seguintes bibliotecas:
 - papaparse, para acessar os dados do arquivo .CSV
 - eslint, para verificação da sintaxe dos arquivos
 - prop-types, para verificação das props enviadas aos componentes
+- react-csv, para download do arquivo .CSV após edição
 
 ## Siga as instruções para rodar o app:
 
