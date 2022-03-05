@@ -133,16 +133,22 @@ tr:hover {
   height: 20px;
 }
 
-.table-area button {
+.form-area-button {
   background-color: #019973;
   color: #ffffff;
   text-align: center;
   padding: 12px 24px;
-  margin: 10px 0;
+  margin: 10px;
   transition-duration: 0.4s;
 }
 
-.table-area button:hover {
+.form-area-button:hover {
   color: #019973;
   background-color: #000639;
+}
+
+.form-area-button a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
 }

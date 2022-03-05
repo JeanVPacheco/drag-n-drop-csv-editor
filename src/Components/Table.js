@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { CSVLink } from 'react-csv';
 
 function Table({ info, setInfo }) {
   if (!info[0]) {
@@ -81,6 +82,7 @@ function Table({ info, setInfo }) {
     <button
       type="button"
       onClick={removeSelected}
+      className="form-area-button"
     >
       <strong>Remover Selecionados</strong>
     </button>
@@ -92,6 +94,15 @@ function Table({ info, setInfo }) {
         {tableHead}
         {tableBody}
       </table>
+      <button
+        type="button"
+        onClick={removeSelected}
+        className="form-area-button"
+      >
+        <CSVLink data={info}>
+          <strong>Download</strong>
+        </CSVLink>
+      </button>
       {selected.length > 0 ? removeSelectedButton : null }
     </div>
   );
