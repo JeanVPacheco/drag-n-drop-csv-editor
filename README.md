@@ -1,6 +1,6 @@
 # Deploy: https://drag-n-drop-csv-editor.vercel.app/
 
-# Edit CSV com função "drag and drop"
+# Editor de CSV com função "drag and drop"
 
 Esse projeto foi feito para o processo seletivo da startup Inteligov
 
