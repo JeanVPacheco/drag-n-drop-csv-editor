@@ -68,6 +68,7 @@ function Table({ info, setInfo }) {
               <input
                 type="checkbox"
                 onClick={(e) => toggleRow(entry.ID, e)}
+                className="table-checkbox"
               />
             </td>
           </tr>
@@ -81,7 +82,7 @@ function Table({ info, setInfo }) {
       type="button"
       onClick={removeSelected}
     >
-      Remover Selecionados
+      <strong>Remover Selecionados</strong>
     </button>
   );
 
