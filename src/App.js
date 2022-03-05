@@ -13,12 +13,14 @@ function App() {
       <DropArea setInfo={setInfo} />
       {/* Renderiza opção de adicionar nova entrada apenas
       se algum csv foi carregado */}
-      {
-        info.length > 0
-          ? <NewEntryForm info={info} setInfo={setInfo} />
-          : null
-      }
-      <Table info={info} setInfo={setInfo} />
+      <section className="form-table-section">
+        {
+          info.length > 0
+            ? <NewEntryForm info={info} setInfo={setInfo} />
+            : null
+        }
+        <Table info={info} setInfo={setInfo} />
+      </section>
     </>
   );
 }

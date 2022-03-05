@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+input {
+  all: unset;
+}
+
+button {
+  all: unset;
+}
+
 body {
   background-color: #f8f8f8;
   font-family: 'Poppins', sans-serif;
@@ -43,6 +51,49 @@ header {
 }
 
 .highlight {
+  background-color: #000d7e;
+}
+
+.form-table-section {
+  padding: 20px 0;
+  width: 70%;
+  margin: auto;
+}
+
+.new-entry-form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+.form-field {
+  display: flex;
+  width: 40%;
+}
+
+.form-field span {
+  margin-right: 5px;
+  font-size: 1em;
+  color: #000639;
+}
+
+.form-field input {
+  border-bottom: 1px solid #000639;
+  width: 100%;
+  color: #000639;
+}
+
+.new-entry-form button {
+  background-color: #000639;
+  color: #009873;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.new-entry-form button:hover {
   background-color: #000d7e;
 }
 

@@ -36,28 +36,32 @@ function NewEntryForm({ setInfo }) {
   };
 
   return (
-    <form>
-      Nome
-      <input
-        onChange={handleChange}
-        name="username"
-        value={username}
-        type="text"
-        placeholder="Nome"
-      />
-      Telefone
-      <input
-        onChange={handleChange}
-        name="telephone"
-        value={telephone}
-        type="text"
-        placeholder="Telefone"
-      />
+    <form className="new-entry-form">
+      <div className="form-field">
+        <span><strong>Nome</strong></span>
+        <input
+          onChange={handleChange}
+          name="username"
+          value={username}
+          type="text"
+          placeholder="Nome"
+        />
+      </div>
+      <div className="form-field">
+        <span><strong>Telefone</strong></span>
+        <input
+          onChange={handleChange}
+          name="telephone"
+          value={telephone}
+          type="text"
+          placeholder="Telefone"
+        />
+      </div>
       <button
         type="button"
         onClick={addNewEntry}
       >
-        Adicionar
+        <strong>+</strong>
       </button>
     </form>
   );
