@@ -99,7 +99,7 @@ function Table({ info, setInfo }) {
         onClick={removeSelected}
         className="form-area-button"
       >
-        <CSVLink data={info}>
+        <CSVLink data={info} enclosingCharacter="">
           <strong>Download</strong>
         </CSVLink>
       </button>
