@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <DropArea setInfo={setInfo} />
-      <Table info={info} />
+      <Table info={info} setInfo={setInfo} />
     </>
   );
 }

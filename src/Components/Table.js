@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function Table({ info }) {
+function Table({ info, setInfo }) {
   if (!info[0]) {
     return null;
   }
-  console.log(info);
-  const headerValues = Object.keys(info[0]);
-  console.log('headerValues', headerValues);
 
+  const [selected, setSelected] = useState([]);
+
+  const selectRow = (entryId) => {
+    setSelected((prev) => [...prev, entryId]);
+  };
+
+  const removeSelected = () => {
+    // atribuo o valor atual para uma variável que será filtrada depois
+    let filteredInfo = info;
+    // para cada id selecionado, é feito um filtro que remove a entry com este id
+    selected.forEach((idToRemove) => {
+      filteredInfo = filteredInfo.filter((entry) => entry.ID !== idToRemove);
+    });
+    // após toda a filtragem, é atribuido o array filtrado para o estado do componente,
+    // para que a tabela seja renderizada novamente
+    setInfo(filteredInfo);
+    // zerando os ids selecionados para que não influencie numa nova seleção
+    setSelected([]);
+  };
+
+  const headerValues = Object.keys(info[0]);
   const tableHead = (
     <thead>
       <tr>
@@ -16,7 +34,7 @@ function Table({ info }) {
           headerValues.map((value) => <th key={value}>{ value }</th>)
         }
         <th>
-          Excluir
+          Selecionar
         </th>
       </tr>
     </thead>
@@ -26,7 +44,7 @@ function Table({ info }) {
     <tbody>
       {
         info.map((entry) => (
-          <tr key={entry.id}>
+          <tr key={entry.ID}>
             {
               Object.values(entry).map((attribute) => (
                 <td key={attribute}>{attribute}</td>
@@ -35,8 +53,9 @@ function Table({ info }) {
             <td>
               <button
                 type="button"
+                onClick={() => selectRow(entry.ID)}
               >
-                Remover
+                Selecionar
               </button>
             </td>
           </tr>
@@ -46,10 +65,18 @@ function Table({ info }) {
   );
 
   return (
-    <table>
-      {tableHead}
-      {tableBody}
-    </table>
+    <div className="table-area">
+      <table>
+        {tableHead}
+        {tableBody}
+      </table>
+      <button
+        type="button"
+        onClick={removeSelected}
+      >
+        Remover Selecionados
+      </button>
+    </div>
   );
 }
 
@@ -59,6 +86,7 @@ Table.propTypes = {
     name: PropTypes.string,
     tel: PropTypes.string,
   })).isRequired,
+  setInfo: PropTypes.func.isRequired,
 };
 
 export default Table;
