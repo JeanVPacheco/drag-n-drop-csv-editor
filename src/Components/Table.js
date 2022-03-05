@@ -51,12 +51,10 @@ function Table({ info, setInfo }) {
               ))
             }
             <td>
-              <button
-                type="button"
+              <input
+                type="checkbox"
                 onClick={() => selectRow(entry.ID)}
-              >
-                Selecionar
-              </button>
+              />
             </td>
           </tr>
         ))
