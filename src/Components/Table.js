@@ -76,18 +76,22 @@ function Table({ info, setInfo }) {
     </tbody>
   );
 
+  const removeSelectedButton = (
+    <button
+      type="button"
+      onClick={removeSelected}
+    >
+      Remover Selecionados
+    </button>
+  );
+
   return (
     <div className="table-area">
       <table>
         {tableHead}
         {tableBody}
       </table>
-      <button
-        type="button"
-        onClick={removeSelected}
-      >
-        Remover Selecionados
-      </button>
+      {selected.length > 0 ? removeSelectedButton : null }
     </div>
   );
 }
