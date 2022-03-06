@@ -100,6 +100,7 @@ header {
 
 .table-area {
   padding: 20px;
+  animation: fadein 0.4s;
 }
 
 table {
@@ -139,6 +140,7 @@ tr:hover {
   text-align: center;
   padding: 12px 24px;
   margin: 10px;
+  animation: fadein 0.4s;
   transition-duration: 0.4s;
 }
 
@@ -151,4 +153,9 @@ tr:hover {
   text-decoration: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
