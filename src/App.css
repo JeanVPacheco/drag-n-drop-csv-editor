@@ -91,6 +91,7 @@ header {
   height: 25px;
   text-align: center;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .new-entry-form button:hover {
@@ -132,6 +133,7 @@ tr:hover {
 .table-checkbox {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .form-area-button {
@@ -142,6 +144,7 @@ tr:hover {
   margin: 10px;
   animation: fadein 0.4s;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .form-area-button:hover {
